@@ -1,0 +1,13 @@
+CREATE DATABASE IF NOT EXISTS biblioteca;
+USE biblioteca;
+
+CREATE TABLE IF NOT EXISTS livros(
+id INT PRIMARY KEY AUTO_INCREMENT,
+titulo VARCHAR(100),
+autor VARCHAR(100),
+editora VARCHAR(100),
+preco DECIMAL(10, 2),
+ano DATE
+);
+
+SELECT * FROM livros;
