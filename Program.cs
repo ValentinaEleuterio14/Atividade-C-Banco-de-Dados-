@@ -1,3 +1,4 @@
+﻿// csharp
 LivroDAO livroDAO = new LivroDAO();
 
 // MENU PRINCIPAL //
@@ -9,26 +10,26 @@ while (true)
     Console.WriteLine("3 - Alterar livro");
     Console.WriteLine("4 - Excluir livro");
     Console.WriteLine("5 - Sair");
-    Console.WriteLine("O que deseja fazer?: ");
+    Console.Write("O que deseja fazer?: ");
 
     string opcao = Console.ReadLine();
 
-// CADASTRAR LIVRO //
-    if(opcao == "1")
+    // CADASTRAR LIVRO //
+    if (opcao == "1")
     {
-        Console.WriteLine("Título: ");
+        Console.Write("Título: ");
         string titulo = Console.ReadLine();
 
-        Console.WriteLine("Autor: ");
+        Console.Write("Autor: ");
         string autor = Console.ReadLine();
 
-        Console.WriteLine("Ano: ");
+        Console.Write("Ano: ");
         int ano = int.Parse(Console.ReadLine());
 
-        Console.WriteLine("Preço: ");
+        Console.Write("Preço: ");
         double preco = double.Parse(Console.ReadLine());
 
-        livro livro = new livro(
+        Livro livro = new Livro(
             titulo,
             autor,
             ano,
@@ -38,12 +39,12 @@ while (true)
         livroDAO.Cadastrar(livro);
     }
 
-// LISTAR LIVROS //
+    // LISTAR LIVROS //
     else if (opcao == "2")
     {
         List<Livro> livros = livroDAO.Listar();
 
-        Console.WriteLine("\n========= LIVROS CADATRADOS =========");
+        Console.WriteLine("\n========= LIVROS CADASTRADOS =========");
 
         foreach (Livro livro in livros)
         {
@@ -51,10 +52,10 @@ while (true)
         }
     }
 
-// ALTERAÇÃO DO LIVRO //
+    // ALTERAÇÃO DO LIVRO //
     else if (opcao == "3")
     {
-        Console.WriteLine("\nDigite o ID do livro: "); // Tem que rever esse WriteLine ai 
+        Console.Write("\nDigite o ID do livro: ");
         int id = int.Parse(Console.ReadLine());
 
         Console.Write("Novo título: ");
@@ -65,7 +66,7 @@ while (true)
 
         Console.Write("Novo ano: ");
         int ano = int.Parse(Console.ReadLine());
-        
+
         Console.Write("Novo preço: ");
         double preco = double.Parse(Console.ReadLine());
 
@@ -74,24 +75,23 @@ while (true)
             autor,
             ano,
             preco
-
         );
 
         livro.Id = id;
 
         livroDAO.Alterar(livro);
-
     }
 
-// EXCLUSÃO DO LIVRO //
+    // EXCLUSÃO DO LIVRO //
     else if (opcao == "4")
     {
-        Console.Write("\nDigite o ID do livro que deseja exclur: ");
-        int id = int.Parse(Console.ReadLine);
+        Console.Write("\nDigite o ID do livro que deseja excluir: ");
+        int id = int.Parse(Console.ReadLine());
 
         livroDAO.Excluir(id);
     }
 
+    // SAIR //
     else if (opcao == "5")
     {
         Console.WriteLine("Programa encerrando...");
@@ -102,6 +102,5 @@ while (true)
     {
         Console.WriteLine("Opção inválida!");
     }
-
-
 }
+

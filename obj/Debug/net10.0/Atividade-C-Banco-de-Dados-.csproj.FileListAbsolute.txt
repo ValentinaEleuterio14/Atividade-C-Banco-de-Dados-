@@ -1,0 +1,6 @@
+C:\Users\valentina60558536\OneDrive - SENAC-SC\Documentos\GitHub\trabalho_final\Atividade-C-Banco-de-Dados-\obj\Debug\net10.0\Atividade-C-Banco-de-Dados-.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\valentina60558536\OneDrive - SENAC-SC\Documentos\GitHub\trabalho_final\Atividade-C-Banco-de-Dados-\obj\Debug\net10.0\Atividade-C-Banco-de-Dados-.AssemblyInfoInputs.cache
+C:\Users\valentina60558536\OneDrive - SENAC-SC\Documentos\GitHub\trabalho_final\Atividade-C-Banco-de-Dados-\obj\Debug\net10.0\Atividade-C-Banco-de-Dados-.AssemblyInfo.cs
+C:\Users\valentina60558536\OneDrive - SENAC-SC\Documentos\GitHub\trabalho_final\Atividade-C-Banco-de-Dados-\obj\Debug\net10.0\Atividade-C-Banco-de-Dados-.csproj.CoreCompileInputs.cache
+C:\Users\valentina60558536\OneDrive - SENAC-SC\Documentos\GitHub\trabalho_final\Atividade-C-Banco-de-Dados-\obj\Debug\net10.0\Atividade-C-Banco-de-Dados-.sourcelink.json
+C:\Users\valentina60558536\OneDrive - SENAC-SC\Documentos\GitHub\trabalho_final\Atividade-C-Banco-de-Dados-\obj\Debug\net10.0\Atividade-C-Banco-de-Dados-.csproj.AssemblyReference.cache

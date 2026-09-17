@@ -5,9 +5,9 @@ class Program
 {
     static void Main()
     {
-        string conexaoString = "Server=localhost;Database=MeuBanco;Trusted_Connection=True;TrustServerCertificate=True;";
+        string conexaoString = "Server=localhost;Database=biblioteca;UID=root; PSD=Senac2026";
  
-        using (SqlConnection conexao = new SqlConnection(conexaoString))
+        using (var conexao = new MySqlConnection(conexaoString))
         {
             try
             {
