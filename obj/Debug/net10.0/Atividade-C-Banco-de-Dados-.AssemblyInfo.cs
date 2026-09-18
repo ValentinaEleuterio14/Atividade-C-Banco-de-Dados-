@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Atividade-C-Banco-de-Dados-")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d1fb12657801c4ede86d4198e936fe3f22cdc41f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+645cd387a79837fbc94f07652a87669ea9a2012e")]
 [assembly: System.Reflection.AssemblyProductAttribute("Atividade-C-Banco-de-Dados-")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Atividade-C-Banco-de-Dados-")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
