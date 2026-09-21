@@ -1,27 +1,67 @@
-﻿publis class SistemaLivros
-
-
-
-
-
-// csharp
-LivroDAO livroDAO = new LivroDAO();
-
-// MENU PRINCIPAL //
-while (true)
+﻿public class SistemaLivros
 {
-    Console.WriteLine("\n--------- SISTEMA DE LIVROS ---------");
-    Console.WriteLine("1 - Cadastrar livro");
-    Console.WriteLine("2 - Listar livros");
-    Console.WriteLine("3 - Alterar livro");
-    Console.WriteLine("4 - Excluir livro");
-    Console.WriteLine("5 - Sair");
-    Console.Write("O que deseja fazer?: ");
+    private LivroDAO livroDAO;
 
-    string opcao = Console.ReadLine();
+    public SistemaLivros()
+    {
+        livroDAO = new LivroDAO();
+    }
+
+    public void Executar()
+    {
+        // MENU PRINCIPAL //
+        while (true)
+        {
+            Console.WriteLine("\n--------- SISTEMA DE LIVROS ---------");
+            Console.WriteLine("1 - Cadastrar livro");
+            Console.WriteLine("2 - Listar livros");
+            Console.WriteLine("3 - Alterar livro");
+            Console.WriteLine("4 - Excluir livro");
+            Console.WriteLine("5 - Sair");
+            Console.Write("O que deseja fazer?: ");
+
+            string opcao = Console.ReadLine();
+
+            // CADASTRAR LIVRO //
+            if (opcao == "1")
+            {
+                CadastrarLivro();
+            }
+
+            // LISTAR LIVROS //
+            else if (opcao == "2")
+            {
+                ListarLivros();
+            }
+
+            // ALTERAÇÃO DO LIVRO //
+            else if (opcao == "3")
+            {
+                AlterarLivro();
+            }
+
+            // EXCLUSÃO DO LIVRO //
+            else if (opcao == "4")
+            {
+                ExcluirLivro();
+            }
+
+            // SAIR //
+            else if (opcao == "5")
+            {
+                Console.WriteLine("Programa encerrando...");
+                break;
+            }
+
+            else
+            {
+                Console.WriteLine("Opção inválida!");
+            }
+        }
+    }
 
     // CADASTRAR LIVRO //
-    if (opcao == "1")
+    private void CadastrarLivro()
     {
         Console.Write("Título: ");
         string titulo = Console.ReadLine();
@@ -46,7 +86,7 @@ while (true)
     }
 
     // LISTAR LIVROS //
-    else if (opcao == "2")
+    private void ListarLivros()
     {
         List<Livro> livros = livroDAO.Listar();
 
@@ -58,8 +98,8 @@ while (true)
         }
     }
 
-    // ALTERAÇÃO DO LIVRO //
-    else if (opcao == "3")
+    // ALTERAR LIVRO //
+    private void AlterarLivro()
     {
         Console.Write("\nDigite o ID do livro: ");
         int id = int.Parse(Console.ReadLine());
@@ -88,25 +128,13 @@ while (true)
         livroDAO.Alterar(livro);
     }
 
-    // EXCLUSÃO DO LIVRO //
-    else if (opcao == "4")
+    // EXCLUIR LIVRO //
+    private void ExcluirLivro()
     {
         Console.Write("\nDigite o ID do livro que deseja excluir: ");
         int id = int.Parse(Console.ReadLine());
 
         livroDAO.Excluir(id);
-    }
-
-    // SAIR //
-    else if (opcao == "5")
-    {
-        Console.WriteLine("Programa encerrando...");
-        break;
-    }
-
-    else
-    {
-        Console.WriteLine("Opção inválida!");
     }
 }
 
