@@ -71,8 +71,8 @@ class Program
     {
         Console.WriteLine("\n--- CADASTRAR LIVRO ---");
 
-        Console.Write("Nome do livro: ");
-        string nome = Console.ReadLine();
+        Console.Write("Título: ");
+        string titulo = Console.ReadLine();
 
         Console.Write("Autor: ");
         string autor = Console.ReadLine();
@@ -86,11 +86,11 @@ class Program
             {
                 string sql = @"
                     INSERT INTO livros (nome, autor, ano_publicacao)
-                    VALUES (@nome, @autor, @ano)";
+                    VALUES (@titulo, @autor, @ano)";
 
                 using (MySqlCommand comando = new MySqlCommand(sql, conexao))
                 {
-                    comando.Parameters.AddWithValue("@nome", nome);
+                    comando.Parameters.AddWithValue("@titulo", titulo);
                     comando.Parameters.AddWithValue("@autor", autor);
                     comando.Parameters.AddWithValue("@ano", ano);
 
@@ -123,7 +123,7 @@ class Program
                     {
                         Console.WriteLine("---------------------------------");
                         Console.WriteLine("ID: " + leitor["id"]);
-                        Console.WriteLine("Livro: " + leitor["nome"]);
+                        Console.WriteLine("Livro: " + leitor["titulo"]);
                         Console.WriteLine("Autor: " + leitor["autor"]);
                         Console.WriteLine("Ano: " + leitor["ano_publicacao"]);
                     }
