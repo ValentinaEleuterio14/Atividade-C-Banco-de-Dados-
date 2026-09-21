@@ -88,7 +88,7 @@ class Program
         Console.Write("Autor: ");
         string autor = Console.ReadLine();
 
-        Console.Write("Ano de publicação: ");
+        Console.Write("Ano: ");
         int ano = int.Parse(Console.ReadLine());
 
         try
@@ -96,7 +96,7 @@ class Program
             using (MySqlConnection conexao = SistemaLivro.Conectar())
             {
                 string sql = @"
-                    INSERT INTO livros (titulo, autor, ano_publicacao)
+                    INSERT INTO livros (titulo, autor, ano)
                     VALUES (@titulo, @autor, @ano)";
 
                 using (MySqlCommand comando = new MySqlCommand(sql, conexao))
@@ -125,7 +125,7 @@ class Program
         {
             using (MySqlConnection conexao = SistemaLivro.Conectar())
             {
-                string sql = "SELECT id, titulo, autor, ano_publicacao FROM livros";
+                string sql = "SELECT id, titulo, autor, ano FROM livros";
 
                 using (MySqlCommand comando = new MySqlCommand(sql, conexao))
                 using (MySqlDataReader leitor = comando.ExecuteReader())
@@ -136,7 +136,7 @@ class Program
                         Console.WriteLine("ID: " + leitor["id"]);
                         Console.WriteLine("Livro: " + leitor["titulo"]);
                         Console.WriteLine("Autor: " + leitor["autor"]);
-                        Console.WriteLine("Ano: " + leitor["ano_publicacao"]);
+                        Console.WriteLine("Ano: " + leitor["ano"]);
                     }
                 }
             }
@@ -161,7 +161,7 @@ class Program
         Console.Write("Novo autor:");
         string autor = Console.ReadLine();
 
-        Console.Write("Novo ano de publicação:");
+        Console.Write("Novo ano:");
         int ano = int.Parse(Console.ReadLine());
 
         try
@@ -170,7 +170,7 @@ class Program
             {
                 string sql = @"
                     UPDATE livros
-                    SET titulo = @titulo, autor = @autor, ano_publicacao = @ano
+                    SET titulo = @titulo, autor = @autor, ano = @ano
                     where id = @id";
 
                     using (MySqlCommand command = new MySqlCommand(sql, conexao))
