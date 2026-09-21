@@ -96,7 +96,7 @@ class Program
             using (MySqlConnection conexao = SistemaLivro.Conectar())
             {
                 string sql = @"
-                    INSERT INTO livros (nome, autor, ano_publicacao)
+                    INSERT INTO livros (titulo, autor, ano_publicacao)
                     VALUES (@titulo, @autor, @ano)";
 
                 using (MySqlCommand comando = new MySqlCommand(sql, conexao))
