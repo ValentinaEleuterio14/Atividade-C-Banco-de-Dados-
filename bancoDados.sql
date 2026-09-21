@@ -7,7 +7,7 @@ titulo VARCHAR(100),
 autor VARCHAR(100),
 editora VARCHAR(100),
 preco DECIMAL(10, 2),
-ano DATE
+ano INT
 );
 
 SELECT * FROM livros;
