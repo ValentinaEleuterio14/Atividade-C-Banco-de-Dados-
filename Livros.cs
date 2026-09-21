@@ -1,22 +1,23 @@
 public class Livro
 {
     public int Id {get; set; }
-    public string Título {get; set; }
-    public string autor {get; set; }
+    public string Titulo {get; set; }
+    public string Autor {get; set; }
     public string Editora {get; set; }
     public double Preco {get; set; }
     public int Ano {get; set; }
 
-    public Livro(string título, string autor, int ano, double preco)
+    public Livro(string título, string autor, int ano, string editora, double preco)
     {
-        Título = título;
-        autor = autor;
+        Titulo = título;
+        Autor = autor;
         Ano = ano;
+        Editora = editora;
         Preco = preco;
     }
 
     public override string ToString()
     {
-        return $"ID: {Id} | Título: {Título} | Autor: {Autor} | Ano: {Ano} | Preço: R$ {Preco:F2}";
+        return $"ID: {Id} | Título: {Titulo} | Autor: {Autor} | Ano: {Ano} | Editora: {Editora} | Preço: R$ {Preco:F2}";
     }
 }

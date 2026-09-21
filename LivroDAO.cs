@@ -1,76 +1,73 @@
-using MySql.Data.MySqlClient;
+using MySqlConnector;
 
 public class LivroDAO
 {
-    private Conexao conexaoBanco;
-
-    public LivroDAO()
+    // CADASTRAR LIVRO
+    public void Cadastrar(Livro livro)
     {
-        conexaoBanco = new Conexao();
-    }
-// INSERT //
-public void Cadastrar(Livro livro)
-{
-    using (MySqlConnection conexao = conexaoBanco.Conectar())
+        using (MySqlConnection? conexao = SistemaLivro.Conectar())
         {
             string sql = @"INSERT INTO livros
-                        (titulo, autor, ano, preco)
-                        VALUES
-                        (@titulo, @autor, @ano, @preco)";
+                           (titulo, autor, ano, preco)
+                           VALUES
+                           (@titulo, @autor, @ano, @preco)";
 
             using (MySqlCommand comando = new MySqlCommand(sql, conexao))
             {
-                comando.Parameters.AddWhithValue("@titulo", livro.Titulo);
-                comando.Parameters.AddWhithValue("@autor", livro.Autor);
-                comando.Parameters.AddWhithValue("@ano", livro.Ano);
-                comando.Parameters.AddWhithValue("@preco", livro.Preco);
-                
+                comando.Parameters.AddWithValue("@titulo", livro.Titulo);
+                comando.Parameters.AddWithValue("@autor", livro.Autor);
+                comando.Parameters.AddWithValue("@ano", livro.Ano);
+                comando.Parameters.AddWithValue("@preco", livro.Preco);
+
+                comando.ExecuteNonQuery();
             }
         }
-}
 
-// SELECT //
-public List<Livro> Listar()
+        Console.WriteLine("Livro cadastrado com sucesso!");
+    }
+
+    // LISTAR LIVROS
+    public List<Livro> Listar()
     {
-        List<Livro> Livros = new List<Livro>();
+        List<Livro> livros = new List<Livro>();
 
-        using (MySqlConnection conexao = conexaoBanco.Conectar())
+        using (MySqlConnection? conexao = SistemaLivro.Conectar())
         {
             string sql = "SELECT * FROM livros";
 
             using (MySqlCommand comando = new MySqlCommand(sql, conexao))
             using (MySqlDataReader leitor = comando.ExecuteReader())
             {
-                
                 while (leitor.Read())
                 {
                     Livro livro = new Livro(
                         leitor["titulo"].ToString(),
                         leitor["autor"].ToString(),
                         Convert.ToInt32(leitor["ano"]),
+                        leitor["editora"].ToString(),
                         Convert.ToDouble(leitor["preco"])
                     );
 
                     livro.Id = Convert.ToInt32(leitor["id"]);
 
-                    LIvros.Add(livro);
+                    livros.Add(livro);
                 }
             }
         }
 
         return livros;
     }
-// UPDATE //
+
+    // ALTERAR LIVRO
     public void Alterar(Livro livro)
     {
-        using (MySqlConnection conexao = conexaoBanco.Conectar())
+        using (MySqlConnection? conexao = SistemaLivro.Conectar())
         {
             string sql = @"UPDATE livros
                            SET titulo = @titulo,
                                autor = @autor,
                                ano = @ano,
-                               preco = @preco,
-                               quantidade = @quantidade
+                               preco = @preco
                            WHERE id = @id";
 
             using (MySqlCommand comando = new MySqlCommand(sql, conexao))
@@ -80,7 +77,6 @@ public List<Livro> Listar()
                 comando.Parameters.AddWithValue("@autor", livro.Autor);
                 comando.Parameters.AddWithValue("@ano", livro.Ano);
                 comando.Parameters.AddWithValue("@preco", livro.Preco);
-                comando.Parameters.AddWithValue("@quantidade", livro.Quantidade);
 
                 comando.ExecuteNonQuery();
             }
@@ -89,10 +85,10 @@ public List<Livro> Listar()
         Console.WriteLine("Livro alterado com sucesso!");
     }
 
-// DELETE //
+    // EXCLUIR LIVRO
     public void Excluir(int id)
     {
-        using (MySqlConnection conexao = conexaoBanco.Conectar())
+        using (MySqlConnection? conexao = SistemaLivro.Conectar())
         {
             string sql = "DELETE FROM livros WHERE id = @id";
 
@@ -106,5 +102,4 @@ public List<Livro> Listar()
 
         Console.WriteLine("Livro excluído com sucesso!");
     }
-
 }

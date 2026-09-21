@@ -72,6 +72,9 @@
         Console.Write("Ano: ");
         int ano = int.Parse(Console.ReadLine());
 
+        Console.WriteLine("Editora:");
+        string editora = Console.ReadLine();
+
         Console.Write("Preço: ");
         double preco = double.Parse(Console.ReadLine());
 
@@ -79,7 +82,9 @@
             titulo,
             autor,
             ano,
+            editora,
             preco
+            
         );
 
         livroDAO.Cadastrar(livro);
@@ -113,6 +118,9 @@
         Console.Write("Novo ano: ");
         int ano = int.Parse(Console.ReadLine());
 
+        Console.WriteLine("Editora:");
+        string editora = Console.ReadLine();
+
         Console.Write("Novo preço: ");
         double preco = double.Parse(Console.ReadLine());
 
@@ -120,6 +128,7 @@
             titulo,
             autor,
             ano,
+            editora,
             preco
         );
 
