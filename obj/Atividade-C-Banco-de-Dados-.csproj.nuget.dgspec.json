@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\valentina60558536\\OneDrive - SENAC-SC\\Documentos\\GitHub\\trabalho_final\\Atividade-C-Banco-de-Dados-\\Atividade-C-Banco-de-Dados-.csproj": {}
+    "C:\\Users\\maria62068486\\Documents\\GitHub\\Atividade-C-Banco-de-Dados-\\Atividade-C-Banco-de-Dados-.csproj": {}
   },
   "projects": {
-    "C:\\Users\\valentina60558536\\OneDrive - SENAC-SC\\Documentos\\GitHub\\trabalho_final\\Atividade-C-Banco-de-Dados-\\Atividade-C-Banco-de-Dados-.csproj": {
+    "C:\\Users\\maria62068486\\Documents\\GitHub\\Atividade-C-Banco-de-Dados-\\Atividade-C-Banco-de-Dados-.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\valentina60558536\\OneDrive - SENAC-SC\\Documentos\\GitHub\\trabalho_final\\Atividade-C-Banco-de-Dados-\\Atividade-C-Banco-de-Dados-.csproj",
+        "projectUniqueName": "C:\\Users\\maria62068486\\Documents\\GitHub\\Atividade-C-Banco-de-Dados-\\Atividade-C-Banco-de-Dados-.csproj",
         "projectName": "Atividade-C-Banco-de-Dados-",
-        "projectPath": "C:\\Users\\valentina60558536\\OneDrive - SENAC-SC\\Documentos\\GitHub\\trabalho_final\\Atividade-C-Banco-de-Dados-\\Atividade-C-Banco-de-Dados-.csproj",
-        "packagesPath": "C:\\Users\\valentina60558536\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\valentina60558536\\OneDrive - SENAC-SC\\Documentos\\GitHub\\trabalho_final\\Atividade-C-Banco-de-Dados-\\obj\\",
+        "projectPath": "C:\\Users\\maria62068486\\Documents\\GitHub\\Atividade-C-Banco-de-Dados-\\Atividade-C-Banco-de-Dados-.csproj",
+        "packagesPath": "C:\\Users\\maria62068486\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\maria62068486\\Documents\\GitHub\\Atividade-C-Banco-de-Dados-\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\valentina60558536\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\maria62068486\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net10.0"
